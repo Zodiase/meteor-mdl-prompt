@@ -12,6 +12,20 @@ var tplname = 'zodiase_mdl_prompt',
     _promptActionCallback_no = new ReactiveVar(null),
     
     onPrompt = function(event, options) {
+      // If options is not defined or null, hide the prompt.
+      if (!options) {
+        _showPrompt.set(false);
+        _promptTitle.set('');
+        _promptMessage.set('');
+        _showPromptAction_yes.set(false);
+        _promptActionTitle_yes.set('');
+        _promptActionCallback_yes.set(null);
+        _showPromptAction_no.set(false);
+        _promptActionTitle_no.set('');
+        _promptActionCallback_no.set(null);
+        return;
+      }
+      //else
       /**
         options: {
           title:   String

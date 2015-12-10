@@ -38,6 +38,11 @@ $(document.body).trigger('__mdl__prompt', {
     action: function () {/* Do things here. */}
   }
 });
+
+// To discard the prompt with code, trigger the event with null options.
+$(document.body).trigger('__mdl__prompt', null);
+// or
+$(document.body).trigger('__mdl__prompt');
 ```
 
 Examples
